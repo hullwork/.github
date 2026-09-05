@@ -2,6 +2,14 @@
   <img src="./assets/hullwork-header.svg" width="100%" alt="Hullwork — open infrastructure for dependable AI agents" />
 </div>
 
+<div align="center">
+  <a href="https://hullwork.github.io/sandbox/"><strong>Sandbox website ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://hullwork.github.io/site/"><strong>Site website ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/orgs/hullwork/repositories"><strong>Source repositories</strong></a>
+</div>
+
 ## Infrastructure for agents that do real work
 
 Hullwork builds open, self-hosted infrastructure for AI agents that need to execute code and ship software—not just generate an answer.
@@ -12,10 +20,14 @@ Our public projects cover the path from an agent request to a result you can tru
 
 `agent request` → **secure execution** → **verified deployment** → `observable result`
 
-## Open-source projects
+<div align="center">
+  <img src="./assets/platform-flow.svg" width="100%" alt="Hullwork system path from agent intent through secure execution and verified deployment to evidence" />
+</div>
+
+## Two systems. One dependable path.
 
 <div align="center">
-  <a href="https://github.com/hullwork/sandbox">
+  <a href="https://hullwork.github.io/sandbox/">
     <img src="./assets/project-sandbox.svg" width="680" alt="Hullwork Sandbox — secure execution for AI agents" />
   </a>
 </div>
@@ -27,7 +39,7 @@ Run an agent's shell and file operations inside a dedicated Kubernetes `gVisor` 
 **Interfaces:** Python SDK · CLI · MCP &nbsp; | &nbsp; **Proof:** [architecture](https://github.com/hullwork/sandbox#sandbox-platform) · [benchmarks](https://github.com/hullwork/sandbox/blob/main/docs/BENCHMARK_REPORT_2026-09-01.md) · [live project site](https://hullwork.github.io/sandbox/)
 
 <div align="center">
-  <a href="https://github.com/hullwork/site">
+  <a href="https://hullwork.github.io/site/">
     <img src="./assets/project-site.svg" width="680" alt="Hullwork Site — verified website delivery for AI agents" />
   </a>
 </div>

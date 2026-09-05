@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">From agent intent to measured evidence</title>
+  <desc id="desc">Hullwork connects agent requests to secure execution, verified deployment, and observable evidence</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050a18"/><stop offset="1" stop-color="#0a2138"/></linearGradient>
+    <linearGradient id="route" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3f86ff"/><stop offset=".62" stop-color="#24d7e8"/><stop offset="1" stop-color="#c7ff35"/></linearGradient>
+  </defs>
+  <rect width="1200" height="390" rx="26" fill="url(#bg)"/>
+  <path d="M0 90h1200M0 310h1200" stroke="#9ac7e8" stroke-opacity=".11" stroke-width="2"/>
+  <text x="52" y="57" fill="#68ddec" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" letter-spacing="2">FROM INTENT TO EVIDENCE</text>
+  <path d="M181 194h160m178 0h160m178 0h160" fill="none" stroke="url(#route)" stroke-width="5" stroke-linecap="round"/>
+  <path d="m329 181 14 13-14 13m338-26 14 13-14 13m338-26 14 13-14 13" fill="none" stroke="#d8f4ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(117 194)">
+    <circle r="64" fill="#0c2945" stroke="#438cff" stroke-width="3"/>
+    <circle cy="-19" r="15" fill="#3f86ff"/><circle cx="-25" cy="22" r="12" fill="#2bd7e7"/><circle cx="25" cy="22" r="12" fill="#c7ff3d"/>
+    <path d="M-13-8-21 11M13-8l8 19M-13 22h26" fill="none" stroke="#d8f4ff" stroke-opacity=".72" stroke-width="3"/>
+  </g>
+  <g transform="translate(430 194)">
+    <path d="M0-70 68-43v52c0 47-28 76-68 93-40-17-68-46-68-93v-52Z" fill="#0c2945" stroke="#2bd7e7" stroke-width="3"/>
+    <rect x="-36" y="-30" width="72" height="60" rx="10" fill="#102f4d" stroke="#74e7f1" stroke-width="2"/>
+    <path d="M-18-8h36M-18 8h25" stroke="#cfe8ff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(768 194)">
+    <rect x="-76" y="-62" width="152" height="112" rx="14" fill="#0c2945" stroke="#2bd7e7" stroke-width="3"/>
+    <path d="M-76-31h152" stroke="#5bddec" stroke-width="2"/>
+    <circle cx="-56" cy="-46" r="5" fill="#3f86ff"/><circle cx="-38" cy="-46" r="5" fill="#2bd7e7"/><circle cx="-20" cy="-46" r="5" fill="#c7ff3d"/>
+    <path d="M-37 8h42m-17-17L5 8l-17 17" fill="none" stroke="#d8f4ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0 50v24m-36 0h72" stroke="#5bddec" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(1082 194)">
+    <circle r="64" fill="#0c2945" stroke="#c7ff3d" stroke-width="3"/>
+    <path d="M-32-23h40M-32-5h28M-32 13h20" stroke="#7da0bf" stroke-width="4" stroke-linecap="round"/>
+    <path d="m1 17 17 17 31-39" fill="none" stroke="#c7ff3d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="#f1f6ff" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <text x="117" y="292">AGENT INTENT</text><text x="430" y="292">SECURE EXECUTION</text><text x="768" y="292">VERIFIED DELIVERY</text><text x="1082" y="292">EVIDENCE</text>
+  </g>
+  <g fill="#7895b3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" text-anchor="middle">
+    <text x="117" y="338">HTTP · CLI · MCP</text><text x="430" y="338">GVISOR · TENANCY</text><text x="768" y="338">K8S · SCALE-TO-ZERO</text><text x="1082" y="338">STATUS · SHA-256</text>
+  </g>
+</svg>
