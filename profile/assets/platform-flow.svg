@@ -33,7 +33,7 @@
     <path d="m1 17 17 17 31-39" fill="none" stroke="#c7ff3d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
   <g fill="#f1f6ff" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
-    <text x="117" y="292">AGENT INTENT</text><text x="430" y="292">SECURE EXECUTION</text><text x="768" y="292">VERIFIED DELIVERY</text><text x="1082" y="292">EVIDENCE</text>
+    <text x="117" y="292">AGENT INTENT</text><text x="430" y="292">SECURE RUNTIME</text><text x="768" y="292">VERIFIED DELIVERY</text><text x="1082" y="292">EVIDENCE</text>
   </g>
   <g fill="#7895b3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" text-anchor="middle">
     <text x="117" y="338">HTTP · CLI · MCP</text><text x="430" y="338">GVISOR · TENANCY</text><text x="768" y="338">K8S · SCALE-TO-ZERO</text><text x="1082" y="338">STATUS · SHA-256</text>
