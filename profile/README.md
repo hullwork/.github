@@ -1,63 +1,59 @@
-# Hullwork
+<div align="center">
+  <img src="./assets/hullwork-header.svg" width="100%" alt="Hullwork — open infrastructure for dependable AI agents" />
+</div>
 
-A self-hosted agent platform, published as four products that are deployed
-together and developed apart.
+## Infrastructure for agents that do real work
 
-Each one builds, tests and releases on its own, and none imports another's
-code. You can run any of them without the other three.
+Hullwork builds open, self-hosted infrastructure for AI agents that need to execute code and ship software—not just generate an answer.
 
-| | What it is | Reach for it when |
-| --- | --- | --- |
-| **[agent](https://github.com/hullwork/agent)** | Multi-agent runtime: ReAct loops, tool policy, human-in-the-loop approval, sub-agents, MCP connectors, durable scheduling, a Work UI and an OpenAI-compatible API | You want the agent runtime itself |
-| **[sandbox](https://github.com/hullwork/sandbox)** | Kubernetes sandbox platform: gVisor-isolated workspaces with an HTTP API, a consumer SDK, an MCP bridge and an operator console | You need to run untrusted code with an isolation boundary you can point at |
-| **[site](https://github.com/hullwork/site)** | Website deployment control plane: build, deploy, version, roll back, scale to zero | You need generated sites to become real, addressable deployments |
-| **[infra](https://github.com/hullwork/infra)** | Controller-free GitOps package compiler | You want deployments described as data and compiled, not templated by hand |
-| **[platform-composition](https://github.com/hullwork/platform-composition)** | The composition: which packages, which versions, which cluster | You are deploying more than one of the above |
+> **An agent is dependable only when its execution boundary and delivery evidence are explicit.**
 
-## Where to start
+Our public projects cover the path from an agent request to a result you can trust:
 
-**To understand the whole thing** — read
-[`platform-composition/docs/architecture.md`](https://github.com/hullwork/platform-composition/blob/main/docs/architecture.md).
-It is the only document that describes all four together: what each one is,
-where the boundaries between them are, and what crosses them.
+`agent request` → **secure execution** → **verified deployment** → `observable result`
 
-**To run something** — each repository's README opens with a quick start that
-was executed as written. Where a command could not be verified, the README
-says so instead of implying it works.
+## Open-source projects
 
-**To deploy this for a company** — read
-[`platform-composition/docs/private-deployment.md`](https://github.com/hullwork/platform-composition/blob/main/docs/private-deployment.md):
-capacity, cluster prerequisites, the full secret inventory, the multi-tenancy
-model, and an example configuration you can copy.
+<div align="center">
+  <a href="https://github.com/hullwork/sandbox">
+    <img src="./assets/project-sandbox.svg" width="680" alt="Hullwork Sandbox — secure execution for AI agents" />
+  </a>
+</div>
 
-## Boundaries worth knowing before you deploy
+### [Sandbox](https://github.com/hullwork/sandbox) — Secure execution for AI agents
 
-These are the parts that are easy to get wrong, and the reason the split is
-worth the extra repositories.
+Run an agent's shell and file operations inside a dedicated Kubernetes `gVisor` Pod. The self-hosted control plane manages durable workspaces, tenant-scoped credentials, quotas, checkpoints, and runtime lifecycle—without ever falling back to host execution.
 
-**Agent is an external tenant of Sandbox and of Site.** Not a sibling
-component — the trust boundary is the one you would draw around a third party.
-Both control planes authenticate Agent's credential and scope everything to
-the tenant it names. Agent cannot declare an identity in a request body; a
-caller-declared identity is rejected rather than ignored.
+**Interfaces:** Python SDK · CLI · MCP &nbsp; | &nbsp; **Proof:** [architecture](https://github.com/hullwork/sandbox#sandbox-platform) · [benchmarks](https://github.com/hullwork/sandbox/blob/main/docs/BENCHMARK_REPORT_2026-09-01.md) · [live project site](https://hullwork.github.io/sandbox/)
 
-**Each product owns its own state.** Three PostgreSQL instances, not one
-shared schema. Two object storage planes with separate credentials. A
-credential for one cannot reach the other.
+<div align="center">
+  <a href="https://github.com/hullwork/site">
+    <img src="./assets/project-site.svg" width="680" alt="Hullwork Site — verified website delivery for AI agents" />
+  </a>
+</div>
 
-**Infra never knows what it is deploying.** It is a pure function: four
-schema-validated records in, an Argo `ApplicationSet` stream out. It does not
-reach the network, read environment variables, or touch a cluster. Adding a
-product takes three data files and no compiler change.
+### [Site](https://github.com/hullwork/site) — Verified website delivery for AI agents
 
-## On the published history
+Turn an agent's deployment request into a real Kubernetes workload through HTTP, CLI, or MCP. The control plane handles tenancy, quotas, builds, ingress, observability, and scale-to-zero—then makes a real HTTP request and records the status code and body digest.
 
-Each repository starts from a single initial commit. The development history
-that preceded it was internal — most of its commit messages were written in
-Chinese, and early commits carried cloud resource identifiers that were
-replaced with placeholders later but stayed reachable through the commits that
-introduced them. Squashing removes all of that at once rather than leaving a
-rewrite that has to be trusted.
+**Interfaces:** HTTP API · CLI · MCP &nbsp; | &nbsp; **Proof:** [architecture](https://github.com/hullwork/site#site) · [one-command demo](https://github.com/hullwork/site#see-the-proof-locally) · [live project site](https://hullwork.github.io/site/)
 
-The trees themselves are unchanged: they are exactly what that history built
-up to, reviewed and tested.
+## What we optimize for
+
+| Principle | Engineering consequence |
+| --- | --- |
+| **Boundaries over promises** | Untrusted code runs with explicit identity, resource, network, and runtime isolation. |
+| **Evidence over status labels** | A deployment is successful only when the running address has been measured. |
+| **Fail closed** | Missing control-plane or runtime dependencies never become permission to execute on the host. |
+| **Composable interfaces** | HTTP APIs, CLIs, SDKs, and MCP tools keep products useful without hidden coupling. |
+| **Operator ownership** | Workspaces, credentials, state, and deployment infrastructure stay in your environment. |
+
+## Start with the boundary you need
+
+- Need to execute agent-generated code safely? Start with **[Sandbox](https://github.com/hullwork/sandbox#one-command-to-see-the-point)**.
+- Need to turn a generated site into a verified deployment? Start with **[Site](https://github.com/hullwork/site#see-the-proof-locally)**.
+- Evaluating the architecture? Read each repository's explicit **known limitations** before adopting it.
+
+<div align="center">
+  <sub>Build the boundary. Measure the result.</sub>
+</div>
